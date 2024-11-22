@@ -1,0 +1,630 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.card {
+  background-color: white;
+}
+
+.non-admin-background {
+  background-color: whitesmoke;
+}
+
+/** Card, Form **/
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+.card-container.card {
+  max-width: 400px !important;
+  padding: 40px 40px;
+}
+
+.card {
+  background-color: #f7f7f7;
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  margin-top: 50px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.error-feedback {
+  color: red;
+}
+
+
+/************** Admin **************/
+
+/* Drawer */
+.offcanvas-body .nav-item {
+  margin-bottom: 20px;
+}
+
+.nav-item:hover {
+  color: red;
+}
+
+.active {
+  color: red;
+}
+
+
+/* Form */
+.form-group {
+  display: flex;
+  justify-content: center;
+}
+
+.form-group label {
+  width: 30%;
+}
+
+.input-form {
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.admin-button {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.admin-button button:hover {
+  background-color: black;
+}
+
+.input-form .gender {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* List book, publisher, reader, staff, borrowBook */
+.staff-list-container {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+/* Tùy chỉnh thanh cuộn */
+.staff-list-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.staff-list-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.staff-list-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.staff-list-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Đảm bảo thông báo "Không có nhân viên nào" cũng nằm trong container */
+.staff-list-container>p {
+  margin: 0;
+  padding: 10px;
+}
+
+.borrow-book-list-container {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+/* Tùy chỉnh thanh cuộn */
+.borrow-book-list-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.borrow-book-list-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.borrow-book-list-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.borrow-book-list-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Đảm bảo thông báo "Không có sách nào" cũng nằm trong container */
+.borrow-book-list-container>p {
+  margin: 0;
+  padding: 10px;
+}
+
+.book-list-container {
+  max-height: 400px;
+  /* Chiều cao tối đa cho 5 cuốn sách */
+  overflow-y: auto;
+  /* Tự động hiện thanh cuộn khi vượt quá chiều cao */
+  border: 1px solid #dee2e6;
+  /* Thêm viền để dễ nhận biết vùng cuộn */
+  border-radius: 4px;
+  /* Bo góc */
+  padding: 10px;
+  /* Thêm padding để nội dung không sát viền */
+}
+
+/* Tùy chỉnh style cho thanh cuộn */
+.publisher-list-container {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+/* Tùy chỉnh thanh cuộn */
+.publisher-list-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.publisher-list-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.publisher-list-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.publisher-list-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Đảm bảo thông báo "Không có nhà xuất bản nào" cũng nằm trong container */
+.publisher-list-container>p {
+  margin: 0;
+  padding: 10px;
+}
+
+.reader-list-container {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+/* Tùy chỉnh thanh cuộn */
+.reader-list-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.reader-list-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.reader-list-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.reader-list-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Đảm bảo thông báo "Không có độc giả nào" cũng nằm trong container */
+.reader-list-container>p {
+  margin: 0;
+  padding: 10px;
+}
+
+.book-list-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.book-list-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.book-list-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.book-list-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.swiper.swiper-navigation {
+  padding: 20px 40px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #0d6efd;
+}
+
+.swiper-slide {
+  height: auto;
+}
+
+.swiper-slide .card {
+  height: 100%;
+  margin: 0 10px;
+}
+
+.swiper-slide img {
+  height: 300px;
+  object-fit: cover;
+}
+
+.swiper:not(.swiper-navigation) .swiper-slide {
+  width: 25% !important;
+}
+
+.borrowBook-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* */
+.button-click {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+}
+
+img {
+  width: 100%;
+}
+
+.input-group {
+  width: 98%;
+}
+
+.add-title,
+.edit-title {
+  text-align: center;
+}
+
+.add-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.add-button button {
+  margin: 20px;
+  margin-top: 0px;
+}
+
+.total {
+  text-align: center;
+  height: 100px;
+  padding-top: 10px;
+  color: white;
+}
+
+.total h4 {
+  padding-bottom: 5px;
+}
+
+.flex-total i {
+  margin: 5px;
+}
+
+.navbar-nav li i {
+  padding-right: 10px;
+}
+
+.login-form {
+  background-color: skyblue;
+  margin: 0 auto;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  border: 1px solid skyblue;
+  box-shadow: 3px 2px 5px 3px;
+  width: 80%;
+}
+
+.login-form .form-group {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.login-form .login-button {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.login-title {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+
+
+/************** User *****************/
+
+/** Header **/
+#header-user .icon {
+  border: 0cap;
+  width: 45%;
+}
+
+#header-user .icon-div {
+  text-align: center;
+}
+
+#header-user {
+  background-color: white;
+}
+
+#header-user .header-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+#header-user .nav-item {
+  padding-right: 50px;
+}
+
+#header-user .nav-link:hover {
+  color: greenyellow;
+  font-weight: bold;
+}
+
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-dialog {
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  width: 100%;
+}
+
+.modal-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.modal-body {
+  margin-bottom: 20px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+/* Login form, Register form */
+#register-form-user,
+#login-form-user {
+  margin: 0 auto;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+#register-form-user {
+  width: 90%;
+}
+
+#login-form-user {
+  width: 80%;
+}
+
+#register-form-user .form-group,
+#login-form-user .form-group {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+#register-form-user #register-button,
+#login-form-user #login-button {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+#register-title-user,
+#login-title-user {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  font-weight: bold;
+}
+
+#login-link,
+#register-link {
+  text-align: center;
+}
+
+.error-text {
+  text-align: center;
+}
+
+#register-form-user #register-button button:hover,
+#login-form-user #login-button button:hover {
+  background-color: white;
+  color: green;
+}
+
+/* Sách */
+.borrow-button {
+  text-align: center;
+}
+
+.search-input {
+  width: 50%;
+  margin: 0 auto;
+}
+
+
+/* Form thay đổi thông tin độc giả */
+#gender-radio {
+  justify-content: start;
+}
+
+#gender-radio label {
+  width: 23%;
+}
+
+
+/* Trang thông tin độc giả (ReaderInformation) */
+#reader-info {
+  padding-left: 50px;
+}
+
+#reader-link a:hover {
+  color: blue;
+}
+
+#reader-link {
+  height: 100%;
+}
+
+
+/** Footer **/
+footer .info a {
+  text-decoration: none;
+}
+
+footer .fa-twitter {
+  color: skyblue;
+}
+
+footer #footer-end {
+  text-align: center;
+}
+
+footer p {
+  color: white;
+}
+
+footer {
+  background-color: green;
+}
+
+.footer-section {
+  background: linear-gradient(to right, #1a1c20, #2d3035);
+  color: #ffffff99;
+}
+
+.footer-info {
+  padding: 0 10px;
+}
+
+.footer-link {
+  color: #ffffff99;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #fff;
+  padding-left: 5px;
+}
+
+.contact-info li {
+  color: #ffffff99;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-link.facebook {
+  background: #3b5998;
+}
+
+.social-link.twitter {
+  background: #1da1f2;
+}
+
+.social-link.youtube {
+  background: #ff0000;
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.footer-bottom {
+  border-top: 1px solid #ffffff33;
+  padding-top: 5px;
+}
